@@ -1,3 +1,19 @@
+from flask import Flask
+from threading import Thread
+
+app = Flask('')
+
+@app.route('/')
+def main():
+  return "Your Bot Is Ready"
+
+def run():
+  app.run(host="0.0.0.0", port=8000)
+
+def keep_alive():
+  server = Thread(target=run)
+  server.start()
+
 import tweepy
 import os
 import re
@@ -52,4 +68,5 @@ class TStream(tweepy.StreamingClient):
        return
 
 stream = TStream(bearer_token)
+stream.add_rules(tweepy.StreamRule("from:ashswagin OR from:altswag"))
 stream.filter() #runs the stream
