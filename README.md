@@ -13,4 +13,4 @@ if you dont know how just find a tutorial.
 then download the code. unzip it and run install_deps.bat. put the consumer key, consumer secret, access token, access token secret, and bearer token into the config.json file.
 now run run.bat
 
-the bot should have started
+the bot should have started. i semi added emergency restart by restarting the bot by making run.bat open when it fails
